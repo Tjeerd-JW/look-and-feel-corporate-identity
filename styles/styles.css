@@ -1,5 +1,5 @@
 * {
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,16 +8,10 @@
     line-height: 1.4;
 }
 
-html {
-    --color-one: #00FF44;
-    --color-two-black: #172F3B;
-    --color-two-white: #90A1AA;
-    --color-three: #ff2A34;
-}
 
 
 nav {
-    background-color: var(--color-two-black);
+    background-color: var(--nav-dark);
     display: flex;
     justify-content: space-between;
     gap: 1rem;
@@ -89,11 +83,11 @@ main {
     h2 {
         text-align: center;
         padding-top: 10px;
-        color: var(--color-two-black);
+        color: var(--nav-neutral);
     }
 
     h3 {
-        color: var(--color-two-black);
+        color: var(--nav-neutral);
         text-wrap: nowrap;
     }
 
@@ -105,7 +99,7 @@ main {
 
     a {
         transition: margin-left 0.3s;
-        color: var(--color-two-black);
+        color: var(--nav-neutral);
 
         &:hover {
             margin-left: 5px;
@@ -157,11 +151,48 @@ main {
 .groups-main {
     margin: 0 auto 0 auto;
 
-    section {
+    section:first-child {
+        background-color: var(--nav-dark);
+        display: grid;
+        grid-template-columns: 3rem 1fr 3rem;
+
+        h2 {
+            grid-column: 2;
+            background-color: var(--nav-dark);
+            color: var(--white);
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        a {
+            /* margin-left: auto; */
+            color: var(--white);
+            font-size: var(--font-size-largest);
+            text-align: center;
+            transition: ease-in-out .2s;
+            padding: 5px;
+
+            /* font-size: calc(var(--font-size-largest) + 10px); */
+            &:hover {
+                margin-left: 0;
+                scale: 1.5;
+            }
+
+            &::after {
+                content: unset;
+            }
+        }
+
+
+    }
+}
+
+/* group setting page */
+.group-settings-main {
+    section:nth-child(2) {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1rem;
-        margin: 0 10px 0 10px;
+        /* margin: 0 10px 0 10px; */
 
         @media (min-width: 950px) {
             grid-template-columns: 1fr 1fr;
@@ -170,7 +201,6 @@ main {
         }
 
         article {
-            background-color: #90A1AA;
             padding: 10px;
             display: grid;
             gap: 5px;
@@ -178,7 +208,7 @@ main {
             max-width: 500px;
             width: 100%;
             margin: 0 auto 0 auto;
-            border-radius: 10px;
+            border-bottom: 2px solid var(--secondary-bg-darkest);
 
             @media (min-width: 950px) {
                 max-width: 460px;
@@ -186,13 +216,13 @@ main {
             }
 
             h3 {
-                color: var(--color-two-black);
+                color: var(--nav-neutral);
                 text-wrap: nowrap;
                 grid-column: 1 / -1;
             }
 
             a {
-                color: var(--color-two-black);
+                color: var(--nav-neutral);
                 font-size: 1.5rem;
                 font-weight: bold;
                 grid-column: 1 / -1;
@@ -202,7 +232,20 @@ main {
                 width: clamp(50px, 20vw, 100px);
                 grid-row: 2;
             }
+
+            p {
+                color: var(--nav-darkest);
+            }
         }
+    }
+}
+
+.group-create-main{
+    h2{
+
+    }
+    form{
+        
     }
 }
 
@@ -214,7 +257,7 @@ main {
     width: 100vw;
 
     header {
-        background-color: var(--color-two-black);
+        background-color: var(--nav-neutral);
         width: 100vw;
 
         h2 {
@@ -230,7 +273,7 @@ main {
         width: 100vw;
 
         h3 {
-            color: var(--color-two-white);
+            color: var(--secondary-bg-lightest-two-white);
             display: flex;
             gap: 1rem;
             padding: .5rem 0 0 1rem;
@@ -240,7 +283,7 @@ main {
 
             svg {
                 path {
-                    fill: var(--color-two-white);
+                    fill: var(--secondary-bg-lightest-two-white);
                 }
             }
         }
@@ -419,7 +462,7 @@ main {
 
     h3 {
         text-align: center;
-        color: var(--color-two-black);
+        color: var(--nav-neutral);
     }
 
     ul {
@@ -431,7 +474,7 @@ main {
             text-align: center;
 
             p {
-                color: var(--color-two-black);
+                color: var(--nav-neutral);
             }
         }
     }
@@ -445,14 +488,14 @@ main {
 
         h4 {
             text-align: center;
-            color: var(--color-two-black);
+            color: var(--nav-neutral);
 
         }
 
         section {
             display: grid;
             padding: 10px;
-            border-top: var(--color-two-white) 2px solid;
+            border-top: var(--secondary-bg-lightest-two-white) 2px solid;
             height: 6rem;
 
             h5 {
