@@ -55,26 +55,30 @@
     <main class="group-create-main">
         <h2>Groep aanmaken</h2>
         <form action="">
-            <label for="groupName">naam groep
+            <label class="text" for="groupName">naam groep
                 <input type="text" name="groupName" id="groupName">
             </label>
 
-            <label class="slide-box" for="theme">gelijk een thema aanmaken?
+            <label class="slide-box" for="theme">
+                gelijk een thema aanmaken?
                 <input type="checkbox" name="theme" id="theme" />
             </label>
+            <fieldset>
+                <label class="text" for="themeName">
+                    Thema naam
+                    <input type="text" name="themeName" id="themeName">
+                </label>
+                <fieldset>
+                    <label class="date-time" for="startDate">StartDatum
+                        <input type="datetime-local" name="startDate" id="startDate">
+                    </label>
+                    <label class="date-time" for="endDate">Einddatum
+                        <input type="datetime-local" name="startDate" id="startDate">
+                    </label>
+                </fieldset>
+            </fieldset>
 
-            <label for="themeName"> 
-                <input type="text" name="themeName" id="themeName">
-            </label>
 
-            <label class="date-time" for="startDate">StartDatum
-                <input type="datetime-local" name="startDate" id="startDate">
-            </label>
-            
-            <label class="date-time" for="endDate">Einddatum
-                  <input type="datetime-local" name="startDate" id="startDate">
-            </label>
-    
 
             <input type="button" class="btn" value="aanmaken">
 
