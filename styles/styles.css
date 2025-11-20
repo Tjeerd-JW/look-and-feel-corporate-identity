@@ -168,6 +168,52 @@ main {
             cursor: pointer;
         }
     }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        margin: .5rem;
+        padding: .5rem;
+        border-radius: .5rem;
+        gap: 1rem;
+        transition: ease-in-out .3s;
+        max-width: 25rem;
+        margin: auto;
+
+        fieldset {
+            grid-column: 1 / -1;
+            border: none;
+            background-color: var(--secondary-bg-lightest);
+            padding: .5rem;
+            border-radius: 10px;
+            gap: 1rem;
+            transition: ease-in-out .3s;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                grid-column: 1 / -1;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+
+            .text {
+                flex-direction: column;
+                input {
+                    &:user-invalid {
+                        border: 2px solid var(--alert-light);
+                    }
+
+                    &:user-valid {
+                        border: 2px solid var(--accent-light);
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Home page */
@@ -274,54 +320,11 @@ main {
 
 /* group setting page */
 .group-settings-main {
-    section:nth-child(2) {
+    section {
         display: grid;
         grid-template-columns: 1fr;
-        /* margin: 0 10px 0 10px; */
 
-        @media (min-width: 950px) {
-            grid-template-columns: 1fr 1fr;
-            width: fit-content;
-            margin: auto;
-        }
-
-        article {
-            padding: 10px;
-            display: grid;
-            gap: 5px;
-            grid-template-columns: 1fr 1fr 1fr;
-            max-width: 500px;
-            width: 100%;
-            margin: 0 auto 0 auto;
-            border-bottom: 2px solid var(--secondary-bg-darkest);
-
-            @media (min-width: 950px) {
-                max-width: 460px;
-                margin: 0;
-            }
-
-            h3 {
-                color: var(--nav-neutral);
-                text-wrap: nowrap;
-                grid-column: 1 / -1;
-            }
-
-            a {
-                color: var(--nav-neutral);
-                font-size: 1.5rem;
-                font-weight: bold;
-                grid-column: 1 / -1;
-            }
-
-            img {
-                width: clamp(50px, 20vw, 100px);
-                grid-row: 2;
-            }
-
-            p {
-                color: var(--nav-darkest);
-            }
-        }
+    
     }
 }
 
@@ -331,49 +334,6 @@ main {
     h2 {}
 
     form {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        align-items: center;
-        margin: .5rem;
-        padding: .5rem;
-        border-radius: .5rem;
-        gap: 1rem;
-        transition: ease-in-out .3s;
-        max-width: 25rem;
-        margin: auto;
-
-        fieldset {
-            grid-column: 1 / -1;
-            border: none;
-            background-color: var(--secondary-bg-lightest);
-            padding: .5rem;
-            border-radius: 10px;
-            gap: 1rem;
-            transition: ease-in-out .3s;
-            display: flex;
-            flex-direction: column;
-
-            label {
-                grid-column: 1 / -1;
-                justify-content: center;
-                align-items: center;
-                display: flex;
-            }
-
-            .text {
-                input {
-                    &:user-invalid {
-                        border: 2px solid var(--alert-light);
-                    }
-
-                    &:user-valid {
-                        border: 2px solid var(--accent-light);
-                    }
-                }
-            }
-        }
-
         fieldset+fieldset {
             opacity: 0;
             transition: .3s;
@@ -401,10 +361,7 @@ main {
             visibility: visible;
         }
 
-        .text {
-            flex-direction: column;
-        }
-
+       
         .btn {
             text-align: center;
             text-align: center;
@@ -417,8 +374,6 @@ main {
 
         }
     }
-
-
 
     form:has(fieldset:first-child input:first-child:user-valid) .btn {
         opacity: 1;
