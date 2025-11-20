@@ -58,25 +58,30 @@
             <fieldset>
                 <label class="text" for="groupName">
                     Naam groep
-                    <input type="text" name="groupName" id="groupName" required>
+                    <input type="text" name="groupName" id="groupName" minlength="3" maxlength="15" required>
                 </label>
 
                 <label class="slide-box" for="theme">
-                    gelijk een thema aanmaken?
                     <input type="checkbox" name="theme" id="theme" />
+                    gelijk een thema aanmaken?
+
             </fieldset>
 
             <fieldset>
 
                 <label class="text" for="themeName">
                     Thema naam
-                    <input type="text" name="themeName" id="themeName">
+                    <input type="text" name="themeName" id="themeName" minlength="3" maxlength="15">
                 </label>
                 <label class="date-time" for="startDate">StartDatum
                     <input type="datetime-local" name="startDate" id="startDate">
                 </label>
                 <label class="date-time" for="endDate">Einddatum
                     <input type="datetime-local" name="startDate" id="startDate">
+                </label>
+                <label class="slide-box" for="upload">
+                    <input type="checkbox" name="upload" id="upload">
+                    Uploaden uit gallerij toestaan?
                 </label>
             </fieldset>
 

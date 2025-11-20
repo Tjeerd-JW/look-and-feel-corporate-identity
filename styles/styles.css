@@ -9,7 +9,6 @@
 }
 
 
-
 nav {
     background-color: var(--nav-dark);
     display: flex;
@@ -48,18 +47,17 @@ nav {
 
         }
 
-
-
         &:first-child {
             margin-left: 20px;
             gap: 0.5rem;
             width: fit-content;
 
             &:hover {
-                @media (min-width: 660px){
-                transform: scale(1.1);
+                @media (min-width: 660px) {
+                    transform: scale(1.1);
 
                 }
+
                 color: var(--font-color-accent);
 
                 svg {
@@ -124,7 +122,7 @@ main {
         color: var(--nav-neutral);
     }
 
-    header{
+    header {
         background-color: var(--nav-dark);
 
         color: var(--white);
@@ -178,9 +176,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 90%;
+    width: clamp(20rem, 100%, 70rem);
+
 
     section {
+        padding: .3rem;
 
         h3 {
             grid-column: 1 / -1;
@@ -343,14 +343,6 @@ main {
         max-width: 25rem;
         margin: auto;
 
-        label {
-            grid-column: 1 / -1;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-        }
-
-
         fieldset {
             grid-column: 1 / -1;
             border: none;
@@ -362,6 +354,24 @@ main {
             display: flex;
             flex-direction: column;
 
+            label {
+                grid-column: 1 / -1;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+            }
+
+            .text {
+                input {
+                    &:user-invalid {
+                        border: 2px solid var(--alert-light);
+                    }
+
+                    &:user-valid {
+                        border: 2px solid var(--accent-light);
+                    }
+                }
+            }
         }
 
         fieldset+fieldset {
@@ -394,19 +404,21 @@ main {
         .text {
             flex-direction: column;
         }
+
+        .btn {
+            text-align: center;
+            text-align: center;
+            grid-column: 1 / -1;
+            margin: auto;
+            padding: .5rem;
+            transition: ease-in-out .3s;
+            opacity: 0;
+            transform: translateY(100vh);
+
+        }
     }
 
-    .btn {
-        text-align: center;
-        text-align: center;
-        grid-column: 1 / -1;
-        margin: auto;
-        padding: .5rem;
-        transition: ease-in-out .3s;
-        opacity: 0;
-        transform: translateY(100vh);
 
-    }
 
     form:has(fieldset:first-child input:first-child:user-valid) .btn {
         opacity: 1;
