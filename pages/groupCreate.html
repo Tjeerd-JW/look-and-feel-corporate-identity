@@ -55,33 +55,32 @@
     <main class="group-create-main">
         <h2>Groep aanmaken</h2>
         <form action="">
-            <label class="text" for="groupName">naam groep
-                <input type="text" name="groupName" id="groupName">
-            </label>
-
-            <label class="slide-box" for="theme">
-                gelijk een thema aanmaken?
-                <input type="checkbox" name="theme" id="theme" />
-            </label>
             <fieldset>
+                <label class="text" for="groupName">
+                    Naam groep
+                    <input type="text" name="groupName" id="groupName" required>
+                </label>
+
+                <label class="slide-box" for="theme">
+                    gelijk een thema aanmaken?
+                    <input type="checkbox" name="theme" id="theme" />
+            </fieldset>
+
+            <fieldset>
+
                 <label class="text" for="themeName">
                     Thema naam
                     <input type="text" name="themeName" id="themeName">
                 </label>
-                <fieldset>
-                    <label class="date-time" for="startDate">StartDatum
-                        <input type="datetime-local" name="startDate" id="startDate">
-                    </label>
-                    <label class="date-time" for="endDate">Einddatum
-                        <input type="datetime-local" name="startDate" id="startDate">
-                    </label>
-                </fieldset>
+                <label class="date-time" for="startDate">StartDatum
+                    <input type="datetime-local" name="startDate" id="startDate">
+                </label>
+                <label class="date-time" for="endDate">Einddatum
+                    <input type="datetime-local" name="startDate" id="startDate">
+                </label>
             </fieldset>
 
-
-
-            <input type="button" class="btn" value="aanmaken">
-
+            <button class="btn">aanmaken</button>
         </form>
     </main>
 </body>
