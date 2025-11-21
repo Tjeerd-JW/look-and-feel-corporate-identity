@@ -176,7 +176,7 @@ main {
         align-items: center;
         margin: .5rem;
         padding: .5rem;
-        border-radius: .5rem;
+        border-radius: var(--border-radius-small);
         gap: 1rem;
         transition: ease-in-out .3s;
         max-width: 25rem;
@@ -187,7 +187,7 @@ main {
             border: none;
             background-color: var(--secondary-bg-lightest);
             padding: .5rem;
-            border-radius: 10px;
+            border-radius: var(--border-radius-small);
             gap: 1rem;
             transition: ease-in-out .3s;
             display: flex;
@@ -202,6 +202,7 @@ main {
 
             .text {
                 flex-direction: column;
+
                 input {
                     &:user-invalid {
                         border: 2px solid var(--alert-light);
@@ -324,7 +325,7 @@ main {
         display: grid;
         grid-template-columns: 1fr;
 
-    
+
     }
 }
 
@@ -361,7 +362,7 @@ main {
             visibility: visible;
         }
 
-       
+
         .btn {
             text-align: center;
             text-align: center;
@@ -403,7 +404,7 @@ main {
         width: 100vw;
 
         h3 {
-            color: var(--secondary-bg-lightest-two-white);
+            color: var(--secondary-bg-dark);
             display: flex;
             gap: 1rem;
             padding: .5rem 0 0 1rem;
@@ -413,7 +414,7 @@ main {
 
             svg {
                 path {
-                    fill: var(--secondary-bg-lightest-two-white);
+                    fill: var(--secondary-bg-dark);
                 }
             }
         }
@@ -422,6 +423,24 @@ main {
             grid-column: 2;
             width: clamp(75px, 20vw, 150px);
             justify-self: center;
+        }
+
+        button {
+            padding: unset;
+            grid-column: 2;
+            justify-self: center;
+            width: 10rem;
+            aspect-ratio: 1 / 1;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            svg {
+                grid-row: 2;
+                grid-column: 2;
+                display: flex;
+            }
+
         }
     }
 
@@ -522,10 +541,10 @@ main {
 
             li {
                 width: fit-content;
-                background-color: #E9ECEE;
+                background-color: var(--secondary-bg-lightest);
                 padding: 10px;
-                border-radius: 25px;
-                color: #0E1B22;
+                border-radius: var(--border-radius-big);
+                color: var(--font-color-dark);
             }
         }
 
@@ -555,7 +574,7 @@ main {
                 svg {
                     &:hover {
                         path {
-                            fill: #ff2A34;
+                            fill: var(--alert-light);
                         }
                     }
                 }
@@ -566,6 +585,7 @@ main {
                     &:hover {
 
                         path {
+                            /* moet nog in de styleguide */
                             fill: #fcdf03;
                         }
                     }
@@ -576,7 +596,7 @@ main {
                 svg {
                     &:hover {
                         path {
-                            fill: #ff2A34;
+                            fill: var(--accent-light);
                         }
                     }
                 }
@@ -627,17 +647,17 @@ main {
         section {
             display: grid;
             padding: 10px;
-            border-top: var(--secondary-bg-lightest-two-white) 2px solid;
+            border-top: var(--secondary-bg-lightest) 2px solid;
             height: 6rem;
 
             h5 {
                 grid-column: 1 / -1;
                 grid-row: 1;
-                font-size: 16px;
+                font-size: var(--font-size-medium);
 
                 a {
                     transition: margin-left 0.3s;
-                    color: #1B3644;
+                    color: var(--font-color-dark);
 
                     &:hover {
                         margin-left: 5px;
@@ -666,7 +686,7 @@ main {
                 margin: 0 auto 0 auto;
 
                 li {
-                    color: #1B3644;
+                    color: var(--font-color-dark);
                     display: flex;
                     text-wrap: nowrap;
                     align-items: center;
@@ -773,7 +793,7 @@ main {
 
     /* transform: skew(30deg, 20deg); */
     path {
-        fill: #ff2A34;
+        fill: var(--alert-light);
     }
 }
 
@@ -890,7 +910,7 @@ main {
     right: 35%;
 
     path {
-        fill: #ff2A34;
+        fill: var(--alert-light);
     }
 }
 
