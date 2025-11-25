@@ -418,6 +418,11 @@ main {
                 }
             }
         }
+        .countdown{
+            grid-column: 2;
+            justify-self:  center;
+            font-size: var(--font-size-medium);
+        }
 
         img {
             grid-column: 2;
