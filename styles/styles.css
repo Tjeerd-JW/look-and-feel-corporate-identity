@@ -279,7 +279,7 @@ main {
         article {
             border-bottom: solid 2px var(--secondary-bg-darkest);
             display: grid;
-            grid-template-columns: 1fr min-content;
+            grid-template-columns: 1fr min-content min-content;
             grid-template-rows: 1fr min-content;
             width: clamp(20rem, 95%, 25rem);
             margin: 0 auto 0 auto;
@@ -291,8 +291,20 @@ main {
                 grid-row: 2;
             }
 
+            svg {
+                grid-column: 2;
+                grid-row: 1 / -1;
+                margin: auto;
+                transition: ease-in-out .3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                    cursor: pointer;
+                }
+            }
+
             a {
-                grid-column: 2 / -1;
+                grid-column: 3 / -1;
                 grid-row: 1 / -1;
                 margin: auto;
                 transition: ease-in-out .3s;
@@ -324,8 +336,23 @@ main {
     section {
         display: grid;
         grid-template-columns: 1fr;
+    }
 
+    .btn {
+        text-align: center;
+        text-align: center;
+        grid-column: 1 / -1;
+        margin: auto;
+        padding: .5rem;
+        transition: ease-in-out .3s;
+    }
 
+    .link {
+        background-color: var(--nav-light);
+    }
+
+    .link:active {
+        margin-top: 1px;
     }
 }
 
@@ -418,9 +445,10 @@ main {
                 }
             }
         }
-        .countdown{
+
+        .countdown {
             grid-column: 2;
-            justify-self:  center;
+            justify-self: center;
             font-size: var(--font-size-medium);
         }
 
