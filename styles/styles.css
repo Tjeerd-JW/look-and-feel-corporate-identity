@@ -285,10 +285,26 @@ main {
             margin: 0 auto 0 auto;
             display: grid;
 
-            h3 {}
+            .arrow {
+                grid-column: 1;
+                margin: unset;
+                transition: ease-in-out .3s;
+
+                &:hover {
+                    transform: scale(1);
+                    cursor: pointer;
+                    margin-left: .5rem;
+                }
+
+                &::after {
+                    margin-left: .5rem;
+                    opacity: 0;
+                }
+            }
 
             p {
                 grid-row: 2;
+                grid-column: 1;
             }
 
             svg {
